@@ -10,16 +10,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import "./App.css";
 
-const itemArray = new Array(9).fill("empty");
+// const itemArray = new Array(9).fill("empty");
 
 const App = () => {
    const [isCross, setIsCross] = useState(false);
    const [winMasssge, setWinMasssge] = useState("");
+   const [itemArray, setItemArray] = useState(new Array(9).fill("empty"));
 
    const reloadGame = () => {
       setIsCross(false);
       setWinMasssge("");
-      itemArray.fill("empty", 0, 9);
+      setItemArray(itemArray.fill("empty", 0, 9));
    };
 
    const checkIsWinner = () => {
@@ -97,13 +98,10 @@ const App = () => {
                      <h1 className="text-success text-uppercase text-center">
                         {winMasssge}
                      </h1>
-                     <Button color="success" onClick={reloadGame}>
-                        Reload the Game
-                     </Button>
                   </div>
                ) : (
-                  <h1 className="text-center text-warning">
-                     {isCross ? "cross" : "circle"} turns
+                  <h1 className="text-center m-5 text-warning">
+                     {isCross ? "Cross" : "Circle"} Turns
                   </h1>
                )}
                <div className="grid">
@@ -115,6 +113,14 @@ const App = () => {
                      </Card>
                   ))}
                </div>
+
+               <Button
+                  className="gameButton"
+                  color="success"
+                  onClick={reloadGame}
+               >
+                  Reload the Game
+               </Button>
             </Col>
          </Row>
       </Container>
