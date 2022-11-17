@@ -1,5 +1,5 @@
 body {
-   background-color: #000000;
+   background-color: #c8ffd4;
 }
 .grid {
    display: grid;
@@ -9,13 +9,19 @@ body {
 }
 
 .box {
+   background-color: black;
    width: auto;
    height: 100px;
    display: flex;
    justify-content: center;
    align-items: center;
+
+   box-shadow: inset 0em 0em 1em #fdfdbd, 0em 0em 2.5em #fdfdbd;
+   border: none;
 }
 
 .icons {
-   font-size: 35px;
+   font-size: 50px;
+   color: #c8ffd4;
+   font-weight: bold;
 }
