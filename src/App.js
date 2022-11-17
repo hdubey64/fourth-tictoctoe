@@ -92,7 +92,7 @@ const App = () => {
       <Container className="p-5">
          <ToastContainer position="bottom-center" />
          <Row>
-            <Col md={6} className="offset-md-3">
+            <Col md={6} className=" reload offset-md-3">
                {winMasssge ? (
                   <div className="mb-2 mt-2">
                      <h1 className="text-success text-uppercase text-center">
@@ -114,13 +114,15 @@ const App = () => {
                   ))}
                </div>
 
-               <Button
-                  className="gameButton"
-                  color="success"
-                  onClick={reloadGame}
-               >
-                  Reload the Game
-               </Button>
+               <div className="text-center">
+                  <Button
+                     className="gameButton"
+                     color="success"
+                     onClick={reloadGame}
+                  >
+                     Reload the Game
+                  </Button>
+               </div>
             </Col>
          </Row>
       </Container>
